@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HASHSTASH</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="Assignment.css">
+    <link rel="stylesheet" href="play.css">
+
+
+</head>
+
+<body>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="grid-modal">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-8" style="overflow: hidden;">
+                                    <img
+                                        src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <h5 class="card-title">Title</h5>
+                                    <textarea id="update-url" class="input-group" type="url"
+                                        placeholder="url here"></textarea>
+                                    <button id="update-btn" class="btn">Update</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row app-bar">
+            <div>
+                <div class="icon"></div>
+                <h5 class="app-title">Web App</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 sidebar">
+                <a href="./assignment.html">Admin</a>
+                <a href="./Play.html">Play</a>
+            </div>
+
+            <div class="col-sm-9">
+
+                <div class="row">
+                    <div class="ad">
+                        <h6>Play Game</h6>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-sm-7 offset-sm-2 board-container">
+                        <div class="board">
+                            <div class="board-row">
+                                <div id="t1" class="tile"></div>
+                                <div id="t2" class="tile"></div>
+                                <div id="t3" class="tile"></div>
+                            </div>
+                            <div class="board-row">
+                                <div id="t4" class="tile"></div>
+                                <div id="t5" class="tile"></div>
+                                <div id="t6" class="tile"></div>
+                            </div>
+                            <div class="board-row">
+                                <div id="t7" class="tile"></div>
+                                <div id="t8" class="tile"></div>
+                                <div id="t9" class="tile"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div id="turn-heading"
+                            style="padding: 0 0 3px 10px; border-radius: 10px 10px 0 0; font-weight: bold;">
+                            Turn</div>
+                        <div id="turn-indicator" style="padding: 0 0 3px 10px; background-color: ghostwhite;">Player O</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> -->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        function checkTemination() {
+            t1 = $('#t1').text();
+            t2 = $('#t2').text();
+            t3 = $('#t3').text();
+            t4 = $('#t4').text();
+            t5 = $('#t5').text();
+            t6 = $('#t6').text();
+            t7 = $('#t7').text();
+            t8 = $('#t8').text();
+            t9 = $('#t9').text();
+
+            // horizontal
+            let h1 = (t1 == 'X' && t2 =='X' && t3 == 'X') || (t1 == 'O' && t2 =='O' && t3 == 'O');
+            let h2 = (t4 == 'X' && t5 =='X' && t6 == 'X') || (t4 == 'O' && t5 =='O' && t6 == 'O');
+            let h3 = (t7 == 'X' && t8 =='X' && t9 == 'X') || (t7 == 'O' && t8 =='O' && t9 == 'O');
+            // vertical
+            let v1 = (t1 == 'X' && t4 =='X' && t7 == 'X') || (t1 == 'O' && t4 =='O' && t7 == 'O');
+            let v2 = (t2 == 'X' && t5 =='X' && t8 == 'X') || (t2 == 'O' && t5 =='O' && t8 == 'O');
+            let v3 = (t3 == 'X' && t6 =='X' && t9 == 'X') || (t3 == 'O' && t6 =='O' && t9 == 'O');
+            //diagonal
+            let d1 = (t1 == 'X' && t5 =='X' && t9 == 'X') || (t1 == 'O' && t5 =='O' && t9 == 'O');
+            let d2 = (t3 == 'X' && t5 =='X' && t7 == 'X') || (t3 == 'O' && t5 =='O' && t7 == 'O');
+
+            console.log(t1, t2, t3)
+            if(h1 || h2 || h3 || v1 || v2 || v3 || d1 || d2) return true;
+            else if(t1!='' && t2 !='' && t3!='' && t4!='' && t5!='' && t6!='' && t7!='' && t8!='' && t9!='') return undefined;
+            else return false;
+        }
+
+        $('#turn-heading').css({'backgroundColor': 'lightpink', 'color': 'red'});
+
+        var turn = 0;
+        document.querySelectorAll('.tile').forEach(item => {
+            item.addEventListener('click', event=> {
+                // console.log($(item).text());
+                if($(item).text() == '') {
+                    if(turn == 0) {
+                        $(item).text('O');
+                        $(item).css({'backgroundColor': 'lightpink', 'color': 'red'});
+                        $('#turn-indicator').text('Player X');
+                        $('#turn-heading').css({'backgroundColor': 'lightgreen', 'color': 'green'});
+                    } else {
+                        $(item).text('X');
+                        $(item).css({'backgroundColor': 'lightgreen', 'color': 'green'});
+                        $('#turn-indicator').text('Player-O');
+                        $('#turn-heading').css({'backgroundColor': 'lightpink', 'color': 'red'});
+                    }
+                    var result = checkTemination();
+                    if(result == true) {
+                        if(turn == 0) alert('Player O Won!');
+                        else alert('Player X Won!');
+                        window.location.reload();
+                    } else if(result == undefined) {
+                        alert('Khichdi ;p');
+                        window.location.reload();
+                    }
+                    turn ^= 1;
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

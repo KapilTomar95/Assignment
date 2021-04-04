@@ -1,0 +1,22 @@
+.board {
+    width: max-content;
+    height: max-content;
+    margin: auto;
+}
+
+.board-row {
+    display: flex;
+    width: max-content;
+}
+
+.tile {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: lightgray;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}

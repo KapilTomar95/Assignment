@@ -1,0 +1,153 @@
+.container {
+  margin-top: 10px;
+}
+
+.app-bar > div {
+  display: flex;
+}
+
+.app-title {
+  line-height: 50px;
+  margin-left: 8px;
+  font-weight: bolder;
+  font-size: 28px;
+}
+
+#modal-title {
+  font-weight: bold;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-image: url('https://media-exp1.licdn.com/dms/image/C560BAQEXp0FZ25E1Yg/company-logo_200_200/0/1519893926095?e=2159024400&v=beta&t=hKXmBIFQMCyMfyQtslPrWs2qbrCtT9hSwPgILmVAU1I');
+  background-position: center;
+  background-size: cover;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.sidebar {
+  background-color:skyblue;
+  border-radius: 10px;
+  padding-top: 15px;
+}
+
+.sidebar > a {
+  padding: 15px;
+  border-radius: 10px;
+  display: block;
+}
+
+.sidebar > a:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+.sidebar > a {
+  width: 100%;
+  text-decoration: none;
+}
+  
+  .card-body {
+    text-align: left;
+    
+  }
+
+  .card-body > button {
+    background-color: rgb(255, 166, 0);
+    border-radius: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 3px 15px;
+    outline: none;
+  }
+
+  .card-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img-container {
+    position: relative;
+    padding-bottom: 75%;
+  }
+
+
+.grid-modal  div > img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.grid-modal div > textarea {
+  border: 1px solid gray;
+  border-radius: 10px;
+  outline: none;
+  padding: 5px;
+}
+
+#update-btn {
+  background-color: palevioletred;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#update-url {
+  margin-bottom: 10px;
+}
+
+.update-card {
+  border: 0;
+}
+
+.ad {
+  border-bottom: 1px solid grey;
+  margin: 0 0 10px 15px;
+  padding-left: 0;
+  width: calc(100% - 30px);
+}
+
+.ad > h6 {
+  color: palevioletred;
+  font-weight: bold;
+  /* width: 200px; */
+  font-size: 24px;
+}
+
+.item2
+{
+    margin: 40px 0 0 0;
+}
+
+@media (min-width: 576px) {
+  .sidebar {
+    min-height: 80vh;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    margin: 15px
+  }
+  .sidebar {
+    display: flex;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+  }
+  .sidebar a {
+    width: 50%;
+    text-align: center;
+  }
+  .card {
+    margin-bottom: 10px
+  }
+  .board-container {
+    margin-bottom: 25px;
+  }
+}
